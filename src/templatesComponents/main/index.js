@@ -12,4 +12,3 @@ export {generateTextBlock} from './textBlock.js';
 export {generateOptionsMethodBlock} from './paymentOptionsBlock.js';
 export {generateCasinoGamesBlock} from './casinoGamesBlock.js';
 export {generateQuoteResponsibleBlock} from './quoteResponsibleBlock.js';
-export {generateHeroBlock} from './heroBlock.js';
