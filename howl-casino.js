@@ -59,58 +59,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const tocSlider = document.getElementById("tocSlider");
   if (!tocSlider) return;
   tocSlider.innerHTML = "";
-  document.querySelectorAll(".page-section h2 > span[id]").forEach((span) => {
-    const id = span.id;
-    const h2 = span.parentElement;
-    if (!id || !h2) return;
-    let label = "";
-    h2.childNodes.forEach((n) => {
-      if (n !== span && n.nodeType === 3) label += n.textContent;
+  setTimeout(() => {
+    document.querySelectorAll(".page-section h2 > span[id]").forEach((span) => {
+      const id = span.id;
+      const h2 = span.parentElement;
+      if (!id || !h2) return;
+      let label = "";
+      h2.childNodes.forEach((n) => {
+        if (n !== span && n.nodeType === 3) label += n.textContent;
+      });
+      label = label.trim() || h2.textContent.trim();
+      if (!label) return;
+      const a = document.createElement("a");
+      a.className = "toc-slider-link";
+      a.href = `#${id}`;
+      a.textContent = label;
+      tocSlider.appendChild(a);
     });
-    label = label.trim() || h2.textContent.trim();
-    if (!label) return;
-    const a = document.createElement("a");
-    a.className = "toc-slider-link";
-    a.href = `#${id}`;
-    a.textContent = label;
-    tocSlider.appendChild(a);
-  });
-});
-document.addEventListener("DOMContentLoaded", function () {
-  const tocSlider = document.getElementById("tocSlider");
-  const leftArrow = document.querySelector(".toc-slider-arrow-left");
-  const rightArrow = document.querySelector(".toc-slider-arrow-right");
-  if (!tocSlider || !leftArrow || !rightArrow) return;
-  const scrollAmount = 300;
-  function updateArrows() {
-    if (tocSlider.scrollLeft <= 0) {
-      leftArrow.disabled = true;
-    } else {
-      leftArrow.disabled = false;
-    }
-    if (
-      tocSlider.scrollLeft + tocSlider.offsetWidth >=
-      tocSlider.scrollWidth - 1
-    ) {
-      rightArrow.disabled = true;
-    } else {
-      rightArrow.disabled = false;
-    }
-  }
-  leftArrow.addEventListener("click", function (e) {
-    e.preventDefault();
-    tocSlider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    setTimeout(updateArrows, 350);
-  });
-  rightArrow.addEventListener("click", function (e) {
-    e.preventDefault();
-    tocSlider.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    setTimeout(updateArrows, 350);
-  });
-  tocSlider.addEventListener("scroll", updateArrows);
-  window.addEventListener("resize", updateArrows);
-  updateArrows();
-  setTimeout(updateArrows, 100);
+  }, 0);
 });
 document.addEventListener("DOMContentLoaded", function () {
   const tocSlider = document.getElementById("tocSlider");
