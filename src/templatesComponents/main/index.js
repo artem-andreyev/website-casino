@@ -8,3 +8,8 @@ export {generateWhyChooseBlock} from './whyChooseBlock.js';
 export {generatePromoBonusBlock} from './promoBonusBlock.js';
 export {generateTOCSliderBlock} from './tableContentBlock.js';
 export {generateBestOnlineBonusesBlock} from './onlineBonusesBlock.js';
+export {generateTextBlock} from './textBlock.js';
+export {generateOptionsMethodBlock} from './paymentOptionsBlock.js';
+export {generateCasinoGamesBlock} from './casinoGamesBlock.js';
+export {generateQuoteResponsibleBlock} from './quoteResponsibleBlock.js';
+export {generateHeroBlock} from './heroBlock.js';
