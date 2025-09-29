@@ -5,11 +5,20 @@ const { v4: uuidv4 } = require('uuid');
 module.exports = {
  async up(queryInterface, Sequelize) {
    const newBlocks = [
-     'reviewSection',
-     'heading2BodyTextImageTwoColumnsCtaBtn',
-     'heading2BodyTextCtaBtn',
-     'cardSection',
-     'paymentsCardsSection'
+     'authorBioBlock',
+     'casinoGamesBlock',
+     'gameProvidersBlock',
+     'gameSliderBlock',
+     'onlineBonusesBlock',
+     'paymentOptionsBlock',
+     'plusMinusBlock',
+     'promoBonusBlock',
+     'quoteResponsibleBlock',
+     'stepsBlock',
+     'tableContentBlock',
+     'textBlock',
+     'toggleBlockFaq',
+     'whyChooseBlock'
    ];
  
    for (const blockName of newBlocks) {
