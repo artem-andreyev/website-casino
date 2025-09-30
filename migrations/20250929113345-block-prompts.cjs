@@ -8,7 +8,7 @@ const BLOCK_PROMPTS_MAP = {
   authorBioBlock: ['authorName', 'authorDescription'],
   casinoGamesBlock: ['item1', 'item2'],
   gameProviderBlock: ['providerSlider'],
-  gameSliderBlock: ['game1', 'game2', 'game3', 'game4', 'game5', 'game6', 'game7'],
+  gameSliderBlock: ['game1', 'game2', 'game3', 'game4', 'game5', 'game6', 'game7', 'slotsHeading'],
   onlineBonusesBlock: ['heading', 'description', 'welcomeBonusHeading', 'welcomeBonusBody', 'noDepositBonusHeading', 'noDepositBonusBody', 'freeSpinsHeading', 'freeSpinsBody', 'cashbackHeading', 'cashbackBody', 'ctaHeading', 'ctaButton'],
   paymentOptionsBlock: ['item1', 'item2', 'item3', 'item4'],
   plusMinusBlock: ['heading', 'advantagesList'],

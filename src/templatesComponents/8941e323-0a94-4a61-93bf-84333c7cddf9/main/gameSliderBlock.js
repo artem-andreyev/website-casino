@@ -1,6 +1,10 @@
 export const generateGameSliderBlock = (content, images, config) => {
   return `
-  <div class="game-slider-wrapper">
+  <div class="game-slider-block">
+    <h3 data-id="${content.gameSliderBlock?.slotsHeading?.id}">
+      ${content.gameSliderBlock?.slotsHeading?.text}
+    </h3>
+    <div class="game-slider-wrapper">
     <button class="slider-arrow slider-arrow-left" aria-label="Previous game">&#8592;</button>
     <div class="game-slider">
 
