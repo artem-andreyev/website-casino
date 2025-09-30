@@ -1,13 +1,13 @@
-export const generateLogoHtml = (images, config) => {
+export const generateLogoHtml = (content) => {
     return `
     <div class="header-logo">
         <img loading="lazy" 
              data-image="logo" 
-             src="${images.logo.url}" 
-             alt="${config.websiteName} logo" 
+             src="${content.headerBlock?.logo?.url}" 
+             alt="${content.headerBlock?.websiteName} logo" 
              class="logo-image" 
-             width="${images.logo.width}" 
-             height="${images.logo.height}">
+             width="${content.headerBlock?.logo?.width}" 
+             height="${content.headerBlock?.logo?.height}">
     </div>
     `;
 };

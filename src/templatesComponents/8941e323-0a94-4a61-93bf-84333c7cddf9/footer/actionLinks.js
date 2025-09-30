@@ -1,4 +1,5 @@
-export const generateActionLinks = (content, previewWebsite) => {
+export const generateActionLinks = (content) => {
+  const previewWebsite = content.footerBlock?.previewWebsite;
   const blocks = content.footerBlock?.infoNavigation?.blocks || [];
 
   const blocksHtml = blocks.map(block => {

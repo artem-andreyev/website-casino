@@ -1,14 +1,12 @@
-export const generateLangDropdown = (languages, currentLang) => {
-  const current = currentLang || 'en';
-
-  const currentLangData = languages.find((lang) => lang.code === current) || languages[0];
-
+export const generateLangDropdown = (content) => {
+  const languages = content.headerBlock?.languages || [];
+  const currentLang = content.headerBlock?.selectedLang || 'en';
+  const currentLangData = languages.find((lang) => lang.code === currentLang) || languages[0];
   const langItemsHtml = languages.map((lang) => `
-    <div class="lang-item ${lang.code === current ? 'selected' : ''}" data-lang="${lang.code}">
+    <div class="lang-item ${lang.code === currentLang ? 'selected' : ''}" data-lang="${lang.code}">
       <img loading="lazy" data-image="${lang.code}_flag" src="${lang.flag}" alt="${lang.code}-flag" class="lang-flag" />
     </div>
   `).join('\n');
-
   return `
     <div class="lang-dropdown">
       <div class="lang-current" id="langDropdownToggle">

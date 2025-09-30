@@ -19,15 +19,12 @@ const BLOCK_PROMPTS_MAP = {
   textBlock: ['heading', 'content'],
   toggleBlockFaq: ['heading', 'faq1', 'faq2', 'faq3', 'faq4', 'faq5'],
   whyChooseBlock: ['heading', 'imageAlt', 'paragraph'],
-  buttonBlock: ['searchPlaceholder', 'searchIconUrl', 'languages', 'selectedLang'],
-  heroBlock: ['title', 'promoMain', 'promoAmount', 'promoPlus', 'playNowLink', 'playNowText'],
-  language: ['languages', 'currentLang'],
-  logo: ['logo', 'websiteName'],
-  search: ['placeholder', 'iconUrl'],
-  actionLinksHeader: ['images', 'structure', 'pageNames', 'language', 'previewWebsite'],
-  actionLinksFooter: ['footerBlock', 'previewWebsite'],
-  footerBottom: ['footerBlock'],
-  footerVisible: ['footerBlock'],
+  headerBlock: [
+    'images', 'structure', 'pageNames', 'previewWebsite', 'searchPlaceholder', 'searchIconUrl', 'languages', 'selectedLang', 'title', 'promoMain', 'promoAmount', 'promoPlus', 'playNowLink', 'playNowText', 'logo', 'websiteName'
+  ],
+  footerBlock: [
+    'previewWebsite', 'infoNavigation', 'bottomInfo', 'visible'
+  ]
 };
  
 module.exports = {
