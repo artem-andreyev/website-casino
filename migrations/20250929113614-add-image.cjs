@@ -5,14 +5,17 @@ module.exports = {
  async up(queryInterface, Sequelize) {
  
    const names = [
+     'block',
      'logo',
-     'gameSlider1','gameSlider2','gameSlider3','gameSlider4','gameSlider5','gameSlider6','gameSlider7',
-     'promoBonusBlock',
-     'whyChooseBlock',
-     'stepBlock1','stepBlock2','stepBlock3','stepBlock4','stepBlock5',
-     'plusIcon',
-     'payments1','payments2','payments3','payments4',
-     'footerNavImage1','footerNavImage2','footerNavImage3',
+     'searchIcon',
+     'en_flag',
+     'ru_flag',
+     'lv_flag',
+     'index',
+     'main',
+     'bonuses',
+     'games',
+     'registration'
    ];
  
    const rows = names.map((image_name) => ({

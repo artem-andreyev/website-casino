@@ -1,4 +1,4 @@
-export const generateHeroBlock = (content) => `
+export const generateHeroBlock = (content, images, config) => `
   <div class="header-text-block">
     <div class="header-info-block">
       <div class="header-title">
@@ -12,12 +12,6 @@ export const generateHeroBlock = (content) => `
           <span class="header-promo-amount">${content.headerBlock?.promoAmount}</span>
           <span class="header-promo-plus">${content.headerBlock?.promoPlus}</span>
         </div>
-        <label 
-          for="header-toggle" 
-          class="header-read-more-btn" 
-          data-read-more="Read More" 
-          data-close-text="Close"
-        ></label>
         <a 
           href="${content.headerBlock?.playNowLink}" 
           target="_blank" 

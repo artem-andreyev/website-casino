@@ -1,13 +1,33 @@
-export const generateActionLinks = (content) => {
-  const previewWebsite = content.footerBlock?.previewWebsite;
-  const blocks = content.footerBlock?.infoNavigation?.blocks || [];
+export const generateActionLinks = (content, pageNames, language, previewWebsite) => {
+  const isoCode =
+    typeof language === 'string'
+      ? language.trim()
+      : language?.iso_code?.trim() || 'en';
 
-  const blocksHtml = blocks.map(block => {
-    const linksHtml = (block.links || []).map(link => `
-      <a href="${previewWebsite ? link.hrefPreview || '#' : link.href || '#'}" class="footer-link">
-        <p data-id="${link.id || ''}">${link.text || ''}</p>
-      </a>
-    `).join('');
+  const isDefaultLanguage =
+    typeof language === 'object'
+      ? Boolean(language.main_language)
+      : isoCode === 'en';
+
+  const langPrefix = isDefaultLanguage ? '' : `/${isoCode}`;
+
+  const blocksHtml = (content.footerBlock?.infoNavigation?.blocks || []).map((block) => {
+    const linksHtml = (pageNames || []).map((rawName) => {
+      const pageName = String(rawName ?? '').trim();
+      const pageKey = pageName.toLowerCase() === 'main' ? 'index' : pageName.toLowerCase();
+      const filePath = pageKey === 'index' ? '/' : `/${pageKey}`;
+
+      const href = previewWebsite
+        ? (pageKey === 'index' ? 'index.html' : `${pageKey}.html`)
+        : `${langPrefix}${filePath}`;
+
+      return `
+        <a href="${href}" 
+           class="footer-link" 
+           data-page="${pageKey}">
+          <p>${pageName}</p>
+        </a>`;
+    }).join('');
 
     const imgHtml = block.image ? `
       <img
@@ -35,6 +55,43 @@ export const generateActionLinks = (content) => {
       <div class="footer-info-navigation-block">
         ${blocksHtml}
       </div>
+
+      ${previewWebsite ? `
+      <script>
+        (function() {
+          const links = document.querySelectorAll('.footer-link');
+          links.forEach((link) => {
+            link.addEventListener('click', (event) => {
+              event.preventDefault();
+              const href = link.getAttribute('href');
+              window.location.href = href;
+            });
+          });
+        })();
+      </script>
+      ` : `
+      <script>
+        (function() {
+          const links = document.querySelectorAll('.footer-link');
+          links.forEach((link) => {
+            link.addEventListener('click', (event) => {
+              event.preventDefault();
+              const href = link.getAttribute('href');
+              const target = href.endsWith('/') ? href + 'index.html' : href + '.html';
+              window.location.href = target;
+            });
+          });
+
+          window.addEventListener('DOMContentLoaded', () => {
+            const page = window.location.pathname;
+            if (page.endsWith('.html')) {
+              const clean = page.replace(/\\.html$/, '') || '/';
+              history.replaceState({}, '', clean);
+            }
+          });
+        })();
+      </script>
+      `}
     </div>
   `;
 };

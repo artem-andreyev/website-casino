@@ -7,9 +7,9 @@ export const generateFooter = (content, images, config, previewWebsite) => `
   <footer style="width: 100%; height: auto">
     <div class="footer-top">
       ${generateLogoHtml(images, config)}
-      ${generateActionLinks(content, previewWebsite)}
+      ${generateActionLinks(content, pageNames, language, previewWebsite)}
     </div>
-    ${generateFooterBottom(content)}
-    ${generateFooterVisible(content)}
+    ${generateFooterBottom(mainContent, config)}
+    ${generateFooterVisible(content, images, config)}
   </footer>
 `;

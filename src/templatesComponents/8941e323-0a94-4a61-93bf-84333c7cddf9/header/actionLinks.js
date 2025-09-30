@@ -1,10 +1,4 @@
-export const generateActionLinks = (content) => {
-  const images = content.headerBlock?.images || {};
-  const structure = content.headerBlock?.structure;
-  const pageNames = content.headerBlock?.pageNames || [];
-  const language = content.headerBlock?.language;
-  const previewWebsite = content.headerBlock?.previewWebsite;
-
+export const generateActionLinks = (images, structure, pageNames, language, previewWebsite) => {
   const isoCode =
     typeof language === 'string'
       ? language.trim()

@@ -18,7 +18,9 @@ module.exports = {
      'tableContentBlock',
      'textBlock',
      'toggleBlockFaq',
-     'whyChooseBlock'
+     'whyChooseBlock',
+     'footerBlock',
+     'headerBlock',
    ];
  
    for (const blockName of newBlocks) {

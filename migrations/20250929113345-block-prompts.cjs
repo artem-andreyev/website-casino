@@ -20,10 +20,10 @@ const BLOCK_PROMPTS_MAP = {
   toggleBlockFaq: ['heading', 'faq1', 'faq2', 'faq3', 'faq4', 'faq5'],
   whyChooseBlock: ['heading', 'imageAlt', 'paragraph'],
   headerBlock: [
-    'images', 'structure', 'pageNames', 'previewWebsite', 'searchPlaceholder', 'searchIconUrl', 'languages', 'selectedLang', 'title', 'promoMain', 'promoAmount', 'promoPlus', 'playNowLink', 'playNowText', 'logo', 'websiteName'
+    'title', 'text', 'promoMain', 'promoAmount', 'promoPlus', 'playNowLink', 'playNowText', 'languages', 'selectedLang', 'searchPlaceholder'
   ],
   footerBlock: [
-    'previewWebsite', 'infoNavigation', 'bottomInfo', 'visible', 'action'
+    'infoNavigation', 'bottomInfo', 'visible', 'action', 'title', 'text'
   ]
 };
  

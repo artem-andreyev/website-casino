@@ -1,4 +1,4 @@
-export const generateFooterVisible = (content) => `
+export const generateFooterVisible = (content, images, config) => `
   <div class="footer-visible">
     <div class="footer-container">
       <div class="footer-visible-block">
@@ -7,11 +7,11 @@ export const generateFooterVisible = (content) => `
             <img
               loading="lazy"
               data-image="logo"
-              src="${content.footerBlock?.visible?.logo?.url || ''}"
-              alt="${content.footerBlock?.visible?.logo?.alt || ''}"
+              src="${images.logo?.url || ''}"
+              alt="${images.logo?.alt || ''}"
               class="logo-image"
-              width="${content.footerBlock?.visible?.logo?.width || ''}"
-              height="${content.footerBlock?.visible?.logo?.height || ''}"
+              width="${images.logo?.width || ''}"
+              height="${images.logo?.height || ''}"
             />
           </div>
         </div>
