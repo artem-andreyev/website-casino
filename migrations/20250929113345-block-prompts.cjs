@@ -23,7 +23,7 @@ const BLOCK_PROMPTS_MAP = {
     'images', 'structure', 'pageNames', 'previewWebsite', 'searchPlaceholder', 'searchIconUrl', 'languages', 'selectedLang', 'title', 'promoMain', 'promoAmount', 'promoPlus', 'playNowLink', 'playNowText', 'logo', 'websiteName'
   ],
   footerBlock: [
-    'previewWebsite', 'infoNavigation', 'bottomInfo', 'visible'
+    'previewWebsite', 'infoNavigation', 'bottomInfo', 'visible', 'action'
   ]
 };
  
