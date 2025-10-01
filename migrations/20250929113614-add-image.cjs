@@ -15,7 +15,23 @@ module.exports = {
      'main',
      'bonuses',
      'games',
-     'registration'
+     'registration',
+     'gameSlider1',
+     'gameSlider2',
+     'gameSlider3',
+     'gameSlider4',
+     'gameSlider5',
+     'gameSlider6',
+     'gameSlider7',
+     'provider1',
+     'plusIcon',
+     'promoBonusBlock',
+     'whyChooseBlock',
+     'stepBlock1',
+     'stepBlock2',
+     'stepBlock3',
+     'stepBlock4',
+     'stepBlock5',
    ];
  
    const rows = names.map((image_name) => ({

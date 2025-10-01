@@ -1,4 +1,5 @@
 export const generateDefaultCSS = (colors, mainContent) => `
+
 * {
   margin: 0;
   padding: 0;
@@ -13,15 +14,14 @@ html {
   scroll-margin-top: 20vh;
 }
 
-body,
-header {
-  background-color: ${colors.background};
-  color: ${colors.text};
+body, header {
+  background-color: ${colors.primary};
+  color: ${colors.actionLinkBg};
   margin-top: 5rem;
 }
 
 body {
-  font-family: ${mainContent.fontFamily};
+  font-family: Arial, sans-serif;
   min-height: 100vh;
 }
 
@@ -30,8 +30,8 @@ header {
   justify-content: center;
   padding: 6rem 5rem 5rem;
   margin-top: 2rem;
-  box-shadow: 0 4px 32px 0 ${colors.border};
-  background: ${colors.actionLinkBg};
+  box-shadow: ${colors.border};
+  background: rgba(162, 89, 230, 0.25);
   background-clip: padding-box;
 }
 
@@ -125,20 +125,19 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: ${colors.actionLinkBg};
-  color: ${colors.text};
+  background: var( --button-bg, linear-gradient(98.07deg, #691aea -16.15%, #6711f1 146.12%));
+  color: ${colors.actionLinkBg};
   border-radius: 0.5rem;
   padding: 1rem 2rem;
   height: 48px;
   min-height: 48px;
   cursor: pointer;
-  box-shadow: 0 2px 12px ${colors.border};
+  box-shadow: ${colors.border};
   border: 0;
   text-transform: uppercase;
   font-weight: 800;
   font-size: 14px;
   font-family: sans-serif;
-  margin-bottom: 2rem;
   transition: background 0.2s, box-shadow 0.2s;
 }
 
@@ -146,23 +145,23 @@ body {
   width: 28px;
   height: 20px;
   border-radius: 4px;
-  box-shadow: 0 1px 4px ${colors.border};
+  box-shadow: ${colors.border};
   object-fit: cover;
-  border: 1px solid ${colors.primary};
+  border: 1px solid ${colors.title};
 }
 
 .lang-text {
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.03em;
-  color: ${colors.text};
-  text-shadow: 0 1px 6px ${colors.border};
+  color: ${colors.actionLinkBg};
+  text-shadow: ${colors.border};
 }
 
 .chevron {
   font-size: 1.2rem;
   margin-left: 0.3rem;
-  color: ${colors.secondary};
+  color: ${colors.border};
   transition: color 0.2s;
 }
 
@@ -172,9 +171,9 @@ body {
   top: 110%;
   left: 0;
   min-width: 120px;
-  background: ${colors.actionLinkBg};
+  background: var( --button-bg, linear-gradient(98.07deg, #691aea -16.15%, #6711f1 146.12%));
   border-radius: 0.5rem;
-  box-shadow: 0 2px 12px ${colors.border};
+  box-shadow: ${colors.border};
   border: 0;
   z-index: 10;
   padding: 0.5rem 0;
@@ -189,9 +188,9 @@ body {
   height: 32px;
   min-height: 32px;
   cursor: pointer;
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
   font-size: 14px;
-  background: ${colors.actionLinkBg};
+  background: var( --button-bg, linear-gradient(98.07deg, #691aea -16.15%, #6711f1 146.12%));
   border-radius: 0.5rem;
   border: 0;
   text-transform: uppercase;
@@ -201,24 +200,26 @@ body {
 }
 
 .lang-item.selected,
-  .lang-item:hover {
-  background: ${colors.border};
-  color: ${colors.text};
+.lang-item:hover {
+  background: rgba(162,89,230,0.18);
+  color: ${colors.actionLinkBg};
 }
 
 .action-button-link {
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
   text-transform: uppercase;
   font-weight: 800;
   font-size: 14px;
-  background: ${colors.actionLinkBg};
-  border-radius: 0.5rem;
+  background: var(
+    --button-bg,
+    linear-gradient(98.07deg, #691aea -16.15%, #6711f1 146.12%)
+  );
+  border-radius: var(--border-radius);
   border: 0;
   border-radius: 0.5rem;
   text-decoration: none;
   padding: 1rem 2rem;
   font-family: sans-serif;
-  margin-bottom: 2rem;
 }
 
 .header-info-block {
@@ -280,7 +281,7 @@ body {
 }
 
 main {
-  background-color: ${colors.background};
+  background-color: ${colors.primary};
   max-width: 1240px;
   margin: 0 auto;
   padding: 1rem;
@@ -313,16 +314,16 @@ main {
 .button-block-list li {
   border-radius: 0.5rem;
   text-decoration: none;
-  background-color: ${colors.secondary};
+  background-color: ${colors.sameCasinosCardBg};
   display: inline-block;
   padding: 0.5rem 0;
   cursor: pointer;
-  box-shadow: 0 4px 6px ${colors.border};
+  box-shadow: ${colors.border};
 }
 
 .button-block-list li a {
   text-decoration: none;
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
   line-height: 2.1rem;
   font-family: sans-serif;
   font-weight: 400;
@@ -333,7 +334,7 @@ main {
 .button-block-line {
   width: 100%;
   height: 8px;
-  background-color: ${colors.background};
+  background-color: ${colors.primary};
   border-radius: 0.8rem;
 }
 
@@ -349,7 +350,7 @@ main {
 
 .same-casinos-block h2 {
   font-size: 28px;
-  color: ${colors.title};
+  color: ${colors.sameCasinosCardBg};
 }
 
 .same-casinos-card,
@@ -412,13 +413,13 @@ main {
 }
 
 .same-casinos-card-info p:nth-child(2) {
-  color: ${colors.border};
+  color: ${colors.background};
   font-size: 16px;
   font-weight: 600;
 }
 
 .same-casinos-card-info p:nth-child(3) {
-  color: ${colors.secondary};
+  color: ${colors.sameCasinosCardBg};
   font-size: 16px;
   font-weight: 600;
 }
@@ -428,7 +429,7 @@ main {
 }
 
 .same-casinos-card-info a > p {
-  color: ${colors.border};
+  color: ${colors.background};
   font-size: 16px;
   font-weight: 600;
 }
@@ -438,7 +439,7 @@ main {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: ${colors.background};
+  background-color: ${colors.primary};
 }
 
 .custom-content {
@@ -451,14 +452,14 @@ main {
   font-size: clamp(4rem, 10vw, 8rem);
   font-weight: 700;
   margin: 0;
-  color: ${colors.background};
+  color: ${colors.primary};
 }
 
 .custom-content p {
   margin: 1.5rem 0;
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   line-height: 1.4;
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
 }
 
 .custom-btn {
@@ -474,7 +475,7 @@ main {
   font-size: 1rem;
   font-weight: 600;
   border-radius: 9999px;
-  box-shadow: 0 2px 8px ${colors.border};
+  box-shadow: ${colors.border};
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -483,8 +484,30 @@ main {
   transform: translateY(-2px);
 }
 
+@media (max-width: 900px) {
+  .header-info-block,
+  .header-info-text {
+    align-items: center;
+    justify-content: center;
+  }
+  .header-info-block {
+    align-self: center;
+    gap: 1rem;
+    width: 100%;
+  }
+  .header-info-text {
+    text-align: center;
+  }
+  .header-title h1 {
+    font-size: 26px;
+  }
+  .header-info-text p {
+    font-size: 14px;
+  }
+}
+
 .action-link {
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
   text-decoration: none;
   font-weight: 600;
   text-transform: uppercase;
@@ -518,7 +541,7 @@ main {
 .registration-gamer h2,
 .registration-steps-block h2 {
   font-size: 28px;
-  color: ${colors.title};
+  color: ${colors.sameCasinosCardBg};
 }
 
 .game-block p,
@@ -569,12 +592,15 @@ main {
   align-items: center;
   width: 100%;
   height: 60px;
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
   text-transform: uppercase;
   font-weight: 800;
   font-size: 16px;
-  background: ${colors.secondary};
-  border-radius: 0.5rem;
+  background: var(
+    --button-bg,
+    linear-gradient(98.07deg, #b993f7 -16.15%, #b993f7 146.12%)
+  );
+  border-radius: var(--border-radius);
   border: 0;
   border-radius: 0.5rem;
   text-decoration: none;
@@ -608,12 +634,12 @@ main {
 .game-slider-block h3,
 .info-content h3 {
   font-size: 24px;
-  color: ${colors.title};
+  color: ${colors.sameCasinosCardBg};
 }
 
 .info-content h4 {
   font-size: 20px;
-  color: ${colors.title};
+  color: ${colors.sameCasinosCardBg};
 }
 
 .info-content-image {
@@ -631,12 +657,12 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
   text-transform: uppercase;
   font-weight: 800;
   font-size: 16px;
-  background: ${colors.actionLinkBg};
-  border-radius: 0.5rem;
+  background: var( --button-bg, linear-gradient(98.07deg, #691aea -16.15%, #6711f1 146.12%));
+  border-radius: var(--border-radius);
   border: 0;
   border-radius: 0.5rem;
   text-decoration: none;
@@ -675,7 +701,7 @@ main {
   right: 0;
   height: 2em;
   width: 100%;
-  background: linear-gradient(to bottom, transparent, ${colors.text});
+  background: linear-gradient(to bottom, transparent, ${colors.actionLinkBg});
   pointer-events: none;
   opacity: 1;
   transition: opacity 0.3s;
@@ -806,8 +832,12 @@ main {
   inset: 0;
   width: 100%;
   height: 100%;
-  background: ${colors.actionLinkBg};
-  color: ${colors.text};
+  background: linear-gradient(
+    135deg,
+    rgba(124, 58, 237, 0.92) 60%,
+    rgba(162, 89, 230, 0.92) 100%
+  );
+  color: ${colors.actionLinkBg};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -877,14 +907,14 @@ main {
   gap: 1rem;
   padding: 4rem;
   border-radius: 1rem;
-  background-color: ${colors.background};
+  background-color: ${colors.primary};
   text-align: center;
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
 }
 
 .registration-banner-navigation h2 {
   font-size: 28px;
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
 }
 
 .game-providers-list {
@@ -913,22 +943,22 @@ main {
 .steps-block h2,
 .toggle-block h2 {
   font-size: 28px;
-  color: ${colors.title};
+  color: ${colors.sameCasinosCardBg};
 }
 
 .casino-information-table {
   width: 100%;
   border-collapse: collapse;
   border-radius: 1rem;
-  background-color: ${colors.background};
+  background-color: ${colors.primary};
   table-layout: fixed;
-  box-shadow: 10px 10px 50px 0 ${colors.border};
+  box-shadow: ${colors.border};
   padding: 1.2rem 2rem;
   font-family: sans-serif;
 }
 
 .casino-information-table td {
-  border-bottom: 1px solid ${colors.text};
+  border-bottom: 1px solid ${colors.actionLinkBg};
   width: 50%;
   font-size: 16px;
   padding: 0.8rem;
@@ -944,7 +974,7 @@ main {
 }
 
 .casino-information-table a {
-  color: ${colors.title};
+  color: ${colors.sameCasinosCardBg};
   text-decoration: underline;
   font-weight: 600;
 }
@@ -983,7 +1013,7 @@ main {
 
 .plus-minus-list h4 {
   font-size: 18px;
-  color: ${colors.title};
+  color: ${colors.sameCasinosCardBg};
 }
 
 .plus-minus-item {
@@ -994,8 +1024,8 @@ main {
   gap: 1rem;
   border-radius: 1rem;
   padding: 1.6rem 2rem;
-  background-color: ${colors.background};
-  box-shadow: 5px 5px 50px 0 ${colors.border};
+  background-color: ${colors.primary};
+  box-shadow: ${colors.border};
   width: 100%;
 }
 
@@ -1036,7 +1066,7 @@ main {
 
 .faq-item,
 footer {
-  background-color: ${colors.background};
+  background-color: ${colors.primary};
 }
 
 .faq-item {
@@ -1044,7 +1074,7 @@ footer {
   padding: 2rem;
   border-radius: 1rem;
   cursor: pointer;
-  box-shadow: 5px 5px 50px 0 ${colors.border};
+  box-shadow: ${colors.border};
 }
 
 .faq-item details {
@@ -1095,17 +1125,17 @@ footer {
   padding: 2rem;
   max-width: 100%;
   width: 100%;
-  background-color: ${colors.background};
+  background-color: ${colors.primary};
   height: 70px;
 }
 
 .footer-visible {
   padding: 1rem;
-  background-color: ${colors.primary};
+  background-color: ${colors.background};
   position: fixed;
   bottom: 0;
   z-index: 999;
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
 }
 
 .footer-container {
@@ -1138,7 +1168,7 @@ footer {
 
 .footer-info {
   gap: 1rem;
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
   width: 100%;
 }
 
@@ -1171,7 +1201,7 @@ footer {
 }
 
 .footer-action-link {
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
   text-decoration: none;
   font-size: 14px;
   transition: all 0.3s ease;
@@ -1187,7 +1217,7 @@ footer {
 
 .footer-logo-block p {
   font-size: 13px;
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
   text-align: left;
   align-self: flex-start;
 }
@@ -1213,7 +1243,7 @@ footer {
 .footer-actions-block h3,
 .footer-visible-block h1 {
   font-size: 18px;
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
   margin-bottom: 3.6rem;
 }
 
@@ -1221,7 +1251,7 @@ footer {
   position: absolute;
   top: 0;
   right: 0;
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
   font-size: 32px;
   cursor: pointer;
   margin-right: 5px;
@@ -1229,13 +1259,13 @@ footer {
 
 .footer-visible-action-button-link {
   margin-top: -3.8rem;
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
   text-transform: uppercase;
   font-weight: 800;
   font-size: 14px;
   padding-bottom: 10rem;
-  background: ${colors.actionLinkBg};
-  border-radius: 0.5rem;
+  background: var( --button-bg, linear-gradient(98.07deg, #691aea -16.15%, #6711f1 146.12%));
+  border-radius: var(--border-radius);
   border: 0;
   border-radius: 0.5rem;
   text-decoration: none;
@@ -1278,7 +1308,7 @@ footer {
   max-width: 240px;
   width: 100%;
   min-height: 450px;
-  background-color: ${colors.background};
+  background-color: ${colors.primary};
   font-family: sans-serif;
   text-align: center;
 }
@@ -1302,13 +1332,13 @@ footer {
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 0.8rem;
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
   text-align: center;
 }
 
 .steps-card-info {
   font-size: 1.08rem;
-  color: ${colors.secondary};
+  color: ${colors.text};
   margin-top: 0.7rem;
   text-align: left;
   max-width: 520px;
@@ -1346,7 +1376,7 @@ footer {
   cursor: pointer;
   font-size: 17px;
   font-weight: 600;
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
   padding-bottom: 20px;
 }
 
@@ -1371,7 +1401,7 @@ footer {
 .payments-img {
   width: 150px;
   height: 110px;
-  background-color: ${colors.text};
+  background-color: ${colors.actionLinkBg};
   border-radius: 10px;
 }
 
@@ -1396,7 +1426,7 @@ footer {
 .game-description-card p,
 .game-description-card-content p {
   font-size: 16px;
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
 }
 
 .game-description-card,
@@ -1443,7 +1473,7 @@ footer {
 
 .game-description-card-content h3 {
   font-size: 21px;
-  color: ${colors.title};
+  color: ${colors.sameCasinosCardBg};
 }
 
 .table-block {
@@ -1459,12 +1489,12 @@ footer {
   border-spacing: 0;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 8px ${colors.border};
+  box-shadow: ${colors.border};
 }
 
 .table-block th {
-  background-color: ${colors.border};
-  color: ${colors.text};
+  background-color: ${colors.background};
+  color: ${colors.actionLinkBg};
   font-weight: 700;
 }
 
@@ -1477,15 +1507,33 @@ footer {
 
 .table-block tbody tr:nth-child(2n),
 .table-block tbody tr:nth-child(odd) {
-  background-color: ${colors.text};
+  background-color: ${colors.actionLinkBg};
 }
 
 .table-block tbody tr:hover {
-  background-color: ${colors.text};
+  background-color: ${colors.actionLinkBg};
 }
 
 .author-bio-block-wrapper {
   width: 100%;
+}
+
+.author-bio-block-wrapper.purple-highlight {
+  background: linear-gradient(
+    120deg,
+    rgba(162, 89, 230, 0.22) 0%,
+    rgba(124, 58, 237, 0.18) 100%
+  );
+  border-radius: 2.5rem;
+  box-shadow: ${colors.border};
+  border: 1.5px solid ${colors.border};
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  margin: 2.5rem 0;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(6px) saturate(1.2);
+  -webkit-backdrop-filter: blur(6px) saturate(1.2);
+  color: ${colors.actionLinkBg};
 }
 
 .author-bio-block {
@@ -1534,7 +1582,7 @@ footer {
   margin: 0;
   font-weight: 700;
   font-size: 16px;
-  color: ${colors.title};
+  color: ${colors.sameCasinosCardBg};
   display: flex;
   align-items: center;
   gap: 6px;
@@ -1543,7 +1591,7 @@ footer {
 .author-desc,
 .author-title {
   font-size: 14px;
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
 }
 
 .author-title {
@@ -1561,13 +1609,13 @@ footer {
   justify-content: center;
   width: 34px;
   height: 34px;
-  background: ${colors.title};
+  background: ${colors.sameCasinosCardBg};
   border-radius: 6px;
   text-decoration: none;
 }
 
 .author-contact svg {
-  fill: ${colors.text};
+  fill: ${colors.actionLinkBg};
   width: 18px;
   height: 18px;
 }
@@ -1612,7 +1660,7 @@ footer {
 
 .page-block h3 {
   font-size: 24px;
-  color: ${colors.title};
+  color: ${colors.sameCasinosCardBg};
 }
 
 .cta2-buttons-block {
@@ -1637,7 +1685,7 @@ footer {
 
 .CTA-card-block h2 {
   font-size: 28px;
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
 }
 
 .steps-horizontal-wrapper {
@@ -1650,10 +1698,10 @@ footer {
 }
 
 .step-card {
-  background: ${colors.background};
-  color: ${colors.secondary};
+  background: ${colors.secondary};
+  color: ${colors.sameCasinosCardBg};
   border-radius: 1.5rem;
-  box-shadow: 0 2px 16px 0 ${colors.border};
+  box-shadow: ${colors.border};
   padding: 2.5rem 2rem 2rem 2rem;
   flex: 0 1 300px;
   display: flex;
@@ -1665,7 +1713,7 @@ footer {
 
 .step-card-img {
   border-radius: 1rem;
-  box-shadow: 0 2px 16px 0 ${colors.border};
+  box-shadow: ${colors.border};
   margin-bottom: 1.5rem;
   max-width: 200px;
   width: 200px;
@@ -1678,13 +1726,13 @@ footer {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.9rem;
-  color: ${colors.text};
+  color: ${colors.actionLinkBg};
   text-align: center;
 }
 
 .step-card-desc {
   font-size: 1.08rem;
-  color: ${colors.secondary};
+  color: ${colors.text};
   text-align: left;
   margin-top: 0.7rem;
   word-break: break-word;
@@ -1693,42 +1741,6 @@ footer {
   width: 100%;
   max-width: 100%;
   display: block;
-}
-
-.footer-link {
-  color: ${colors.text};
-  text-decoration: none;
-  display: inline-block;
-}
-
-.footer-link p {
-  color: ${colors.text};
-  text-decoration: none;
-}
-
-@media (max-width: 900px) {
-  .header-info-block,
-  .header-info-text {
-    align-items: center;
-    justify-content: center;
-  }
-  .header-info-block {
-    align-self: center;
-    gap: 1rem;
-    width: 100%;
-  }
-  .header-info-text {
-    text-align: center;
-  }
-  .header-title h1 {
-    font-size: 26px;
-  }
-  .header-info-text p {
-    font-size: 14px;
-  }
-  .action-button-link {
-    padding: 1rem 0.5rem;
-  }
 }
 
 @media (max-width: 900px) {
@@ -1744,4 +1756,27 @@ footer {
   }
 }
 
+.footer-link {
+  color: ${colors.actionLinkBg};
+  text-decoration: none;
+  display: inline-block;
+}
+
+.footer-link p {
+  color: ${colors.actionLinkBg};
+  text-decoration: none;
+}
+
+.stylish-slot-paragraph {
+  background: rgba(162, 89, 230, 0.18);
+  border-radius: 2.5rem;
+  box-shadow: ${colors.border};
+  padding: 1rem 1rem 1em 1rem;
+  margin: 1rem 0 2.5rem 0;
+  color: ${colors.actionLinkBg};
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(6px) saturate(1.2);
+  border: 1.5px solid ${colors.border};
+}
 `;
