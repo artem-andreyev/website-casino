@@ -7,17 +7,17 @@ const TEMPLATE_ID = '8941e323-0a94-4a61-93bf-84333c7cddf9';
 const BLOCK_PROMPTS_MAP = {
   authorBioBlock: ['authorName', 'authorDescription'],
   casinoGamesBlock: ['item1', 'item2'],
-  gameProviderBlock: ['providerSlider'],
+  gameProviderBlock: ['popularSlotsHeading', 'playNow', 'provider1', 'provider2', 'provider3', 'provider4', 'provider5', 'provider6', 'provider7'],
   gameSliderBlock: ['game1', 'game2', 'game3', 'game4', 'game5', 'game6', 'game7', 'slotsHeading'],
-  onlineBonusesBlock: ['heading', 'description', 'welcomeBonusHeading', 'welcomeBonusBody', 'noDepositBonusHeading', 'noDepositBonusBody', 'freeSpinsHeading', 'freeSpinsBody', 'cashbackHeading', 'cashbackBody', 'ctaHeading', 'ctaButton'],
-  paymentOptionsBlock: ['item1', 'item2', 'item3', 'item4'],
-  plusMinusBlock: ['heading', 'advantagesList'],
+  bestOnlineBonusesBlock: ['heading', 'description', 'welcomeBonusHeading', 'welcomeBonusBody', 'noDepositBonusHeading', 'noDepositBonusBody', 'freeSpinsHeading', 'freeSpinsBody', 'cashbackHeading', 'cashbackBody', 'ctaHeading', 'ctaButton'],
+  optionsMethodBlock: ['item1', 'item2', 'item3', 'item4'],
+  plusMinusBlock: ['heading', 'advantage1', 'advantage2', 'advantage3', 'advantage4', 'advantage5'],
   promoBonusBlock: ['title', 'item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'imageAlt'],
-  quoteResponsibleBlock: ['responsibleGambling'],
+  responsibleGambling: ['heading', 'intro', 'limitsHeading', 'limitsIntro', 'tip1', 'tip2', 'tip3', 'tip4', 'tip5', 'problemHeading', 'problemText', 'quote'],
   stepsBlock: ['title', 'step1Heading', 'step1Body', 'step2Heading', 'step2Body', 'step3Heading', 'step3Body', 'step4Heading', 'step4Body', 'step5Heading', 'step5Body'],
   tableContentBlock: [],
   textBlock: ['heading', 'content'],
-  toggleBlockFaq: ['heading', 'faq1', 'faq2', 'faq3', 'faq4', 'faq5'],
+  faqBlock: ['heading', 'faq1', 'faq2', 'faq3', 'faq4', 'faq5'],
   whyChooseBlock: ['heading', 'imageAlt', 'paragraph'],
   headerBlock: [
     'title', 'text', 'promoMain', 'promoAmount', 'promoPlus', 'playNowLink', 'playNowText', 'languages', 'selectedLang', 'searchPlaceholder'
