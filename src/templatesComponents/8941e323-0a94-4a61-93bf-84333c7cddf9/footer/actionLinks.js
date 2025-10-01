@@ -71,6 +71,14 @@ export const generateActionLinks = (content, pageNames, language, previewWebsite
             window.location.href = target;
           });
         });
+
+        window.addEventListener('DOMContentLoaded', () => {
+          const page = window.location.pathname;
+          if (page.endsWith('.html')) {
+            const clean = page.replace(/\\.html$/, '') || '/';
+            history.replaceState({}, '', clean);
+          }
+        });
       })();
     </script>
     `}
