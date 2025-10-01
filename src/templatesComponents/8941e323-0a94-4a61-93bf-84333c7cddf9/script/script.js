@@ -185,40 +185,5 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
-})();
-
-(() => {
-  function e(e = document) {
-    e.querySelectorAll(".header-info-block").forEach((e) => {
-      const t = e.querySelector(".header-toggle"),
-        n = e.querySelector(".description"),
-        o = e.querySelector(".header-read-more-btn");
-      if (!t || !n || !o) return;
-      const r = () => {
-        const e = t.checked;
-        t.checked = !1;
-        n.scrollHeight - n.clientHeight > 1
-          ? (o.style.display = "inline-block")
-          : ((o.style.display = "none"), (n.style.maxHeight = "none")),
-          (t.checked = e);
-      };
-      let c;
-      r();
-      const i = () => {
-        cancelAnimationFrame(c), (c = requestAnimationFrame(r));
-      };
-      window.addEventListener("resize", i, { passive: !0 });
-      const a = new MutationObserver(r);
-      a.observe(n, { childList: !0, characterData: !0, subtree: !0 });
-      e.__cleanup = () => {
-        window.removeEventListener("resize", i), a.disconnect();
-      };
-    });
-  }
-  if ("loading" === document.readyState) {
-    document.addEventListener("DOMContentLoaded", () => e());
-  } else {
-    e();
-  }
-  window.initReadMore = e;
-})();
+})
+();
